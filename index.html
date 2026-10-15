@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Clínica Veterinaria Huellas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="index.html"><span>🐾</span> Huellas</a>
+  <button id="menuBtn" class="menuBtn" aria-label="Abrir menú">☰</button>
+  <nav id="menu" class="menu">
+    <a class="activo" href="index.html">Inicio</a>
+    <a href="paginas/servicios.html">Servicios</a>
+    <a href="paginas/turnos.html">Turnos</a>
+    <a href="paginas/cuidados.html">Cuidados</a>
+    <a href="paginas/contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero contenedor">
+    <div>
+      <span class="tag">Atención veterinaria integral</span>
+      <h1>Bienestar y cuidado en cada etapa de su vida.</h1>
+      <p class="lead">
+        En Clínica Veterinaria Huellas acompañamos a perros y gatos con atención clínica,
+        prevención, vacunación y seguimiento personalizado.
+      </p>
+      <div class="acciones">
+        <a class="btn primario" href="paginas/turnos.html">Solicitar turno</a>
+        <button class="btn secundario" id="horarioBtn">Ver horario de hoy</button>
+      </div>
+      <p id="horario" class="mensaje"></p>
+    </div>
+
+    <div class="heroVisual" aria-hidden="true">
+      <article class="petCard perro">
+        <span>🐶</span>
+        <b>Chequeos preventivos</b>
+        <small>Controles periódicos y seguimiento.</small>
+      </article>
+      <article class="petCard gato">
+        <span>🐱</span>
+        <b>Atención clínica</b>
+        <small>Consultas y orientación profesional.</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats contenedor">
+    <article><strong>10+</strong><span>servicios disponibles</span></article>
+    <article><strong>6 días</strong><span>de atención semanal</span></article>
+    <article><strong id="contador">0</strong><span>visitas en este navegador</span></article>
+  </section>
+
+  <section class="contenedor seccion">
+    <div class="titulo">
+      <span class="tag">Nuestros espacios</span>
+      <h2>Todo lo que necesitás para cuidar a tu mascota</h2>
+      <p>Conocé nuestras prestaciones, solicitá un turno, consultá recomendaciones y encontranos.</p>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="paginas/servicios.html">
+        <span class="icono">🩺</span>
+        <h3>Servicios</h3>
+        <p>Consultas, vacunación, controles, desparasitación y más.</p>
+        <b>Conocer servicios →</b>
+      </a>
+      <a class="card" href="paginas/turnos.html">
+        <span class="icono">📅</span>
+        <h3>Turnos</h3>
+        <p>Solicitá una atención de forma rápida y sencilla.</p>
+        <b>Solicitar turno →</b>
+      </a>
+      <a class="card" href="paginas/cuidados.html">
+        <span class="icono">💚</span>
+        <h3>Cuidados</h3>
+        <p>Consejos simples sobre alimentación, higiene y prevención.</p>
+        <b>Ver recomendaciones →</b>
+      </a>
+      <a class="card" href="paginas/contacto.html">
+        <span class="icono">📍</span>
+        <h3>Contacto</h3>
+        <p>Ubicación, horarios y medios para comunicarte con la clínica.</p>
+        <b>Ver contacto →</b>
+      </a>
+    </div>
+  </section>
+
+  <section class="contenedor dosColumnas">
+    <div>
+      <span class="tag">Atención responsable</span>
+      <h2>Prevenir también es cuidar</h2>
+      <p class="texto">
+        Los controles periódicos permiten detectar problemas a tiempo y acompañar mejor
+        cada etapa de la vida de tu mascota.
+      </p>
+      <ul class="check">
+        <li>Vacunación y desparasitación.</li>
+        <li>Controles clínicos de rutina.</li>
+        <li>Orientación sobre alimentación y hábitos saludables.</li>
+      </ul>
+    </div>
+    <div class="nota">
+      <h3>¿Necesitás atención?</h3>
+      <p>
+        Si tu mascota presenta síntomas persistentes, cambios de conducta o pérdida de apetito,
+        solicitá una consulta para una evaluación profesional.
+      </p>
+      <a class="btn primario" href="paginas/turnos.html">Ir a Turnos</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer contenedor">
+  <div>
+    <b>Clínica Veterinaria Huellas</b>
+    <p>Atención y prevención para perros y gatos.</p>
+  </div>
+  <p class="materia">Sitio desarrollado en Laboratorio Full Stack I</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
