@@ -6,42 +6,149 @@
   <title>Contacto y ubicación | Clínica Veterinaria Huellas</title>
 </head>
 <body>
-
-  <h1>Contacto y ubicación</h1>
-
-  <p><strong>Alumno/a responsable:</strong> Alan Antitru</p>
-
-  <h2>Consigna</h2>
-
-  <p>Desarrollar una página que reúna la información necesaria para que una persona pueda comunicarse con la veterinaria y ubicar el establecimiento.</p>
-
-  <h3>La página deberá incluir como mínimo:</h3>
-
-  <ul>
-        <li>Incluir un título principal y un párrafo introductorio invitando al usuario a comunicarse.</li>
-        <li>Presentar tarjetas o bloques con teléfono, correo electrónico, dirección y otros medios de contacto.</li>
-        <li>Agregar una tabla o sección organizada con los días y horarios de atención, junto con una imagen o referencia visual de la ubicación.</li>
-        <li>Incorporar un formulario breve de contacto e incluir indicaciones útiles para llegar al establecimiento.</li>
-  </ul>
-
-  <p>
-    <strong>Opcional:</strong> Podés incorporar algún elemento adicional que, a tu criterio,
-    mejore la presentación, la información o la funcionalidad de la página.
-    La propuesta debe ser coherente con el sitio y con la temática desarrollada.
-  </p>
-
-  <p>
-    Tomá como referencia el <strong>index.html</strong> para integrar esta página al resto del sitio.
-    La versión final debe mantener coherencia visual y permitir navegar hacia las demás secciones.
-    El menú no se encuentra resuelto en esta plantilla: deberás incorporarlo tomando como referencia
-    la página principal.
-  </p>
-
-  <p>
-    JavaScript es opcional y puede utilizarse si aporta una funcionalidad concreta.
-    Si necesitás modificar archivos CSS o JavaScript compartidos, coordiná previamente con el resto del grupo
-    para evitar conflictos.
-  </p>
+  
+<header class="topbar">
+  <a class="logo" href="../index.html"><span>🐾</span> Huellas</a>
+  <button id="menuBtn" class="menuBtn" aria-label="Abrir menú">☰</button>
+  <nav id="menu" class="menu">
+    <a href="../index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="turnos.html">Turnos</a>
+    <a href="cuidados.html">Cuidados</a>
+    <a class="activo" href="contacto.html">Contacto</a>
+  </nav>
+</header>
+ 
+<main>
+  <!-- Título, introducción y medios de contacto -->
+  <section class="contenedor seccion">
+    <div class="titulo">
+      <span class="tag">Contacto y ubicación</span>
+      <h1>Veterinaria Huellas</h1>
+      <p class="lead">
+        En Veterinaria Huellas cuidamos a tus mascotas como si fueran parte de nuestra
+        propia familia. Ofrecemos consultas, vacunación, peluquería y atención de
+        urgencias con un equipo profesional y lleno de cariño por los animales.
+        Si tenés alguna duda, querés sacar un turno o necesitás asesoramiento sobre
+        la salud de tu compañero, no dudes en comunicarte con nosotros. ¡Estamos
+        para ayudarte!
+      </p>
+    </div>
+ 
+    <div class="grid">
+      <a class="card" href="tel:+542944456789">
+        <span class="icono">📞</span>
+        <h3>Teléfono</h3>
+        <p>(2944) 45-6789</p>
+        <b>Llamar →</b>
+      </a>
+      <a class="card" href="mailto:contacto@veterinariahuellas.com">
+        <span class="icono">✉️</span>
+        <h3>Correo electrónico</h3>
+        <p>contacto@veterinariahuellas.com</p>
+        <b>Escribir →</b>
+      </a>
+      <a class="card" href="https://wa.me/5492944123456" target="_blank" rel="noopener">
+        <span class="icono">💬</span>
+        <h3>WhatsApp</h3>
+        <p>+54 9 2944 12-3456</p>
+        <b>Enviar mensaje →</b>
+      </a>
+      <a class="card" href="#ubicacion">
+        <span class="icono">📍</span>
+        <h3>Dirección</h3>
+        <p>Av. Bustillo km 5, San Carlos de Bariloche</p>
+        <b>Ver ubicación →</b>
+      </a>
+    </div>
+  </section>
+ 
+  <!-- Días y horarios -->
+  <section class="contenedor seccion">
+    <div class="titulo">
+      <span class="icono">📌</span>
+      <h2>Días y horarios de atención</h2>
+    </div>
+    <div class="stats">
+      <article><strong>8:00 a 20:00</strong><span>Lunes a viernes</span></article>
+      <article><strong>9:00 a 14:00</strong><span>Sábados</span></article>
+      <article><strong>9:00 a 13:00</strong><span>Domingos (solo urgencias)</span></article>
+    </div>
+  </section>
+ 
+  <!-- Ubicación y cómo llegar -->
+  <section class="contenedor dosColumnas" id="ubicacion">
+    <div>
+      <span class="icono">📍</span>
+      <h2>Indicaciones útiles</h2>
+      <p class="texto">Estamos sobre Av. Bustillo, de fácil acceso desde el centro.</p>
+      <ul class="check">
+        <li>En colectivo: las líneas que pasan por Av. Bustillo te dejan a una cuadra.</li>
+        <li>En auto: contamos con estacionamiento gratuito frente al local.</li>
+        <li>Referencia: estamos al lado de la estación de servicio.</li>
+        <li>Si venís por una urgencia, avisanos por teléfono antes de llegar.</li>
+      </ul>
+    </div>
+    <div class="nota">
+      <h3>Nuestra ubicación</h3>
+      <!-- Reemplazá el src por el mapa de tu dirección real (Google Maps > Compartir > Insertar un mapa) -->
+      <iframe src="https://www.google.com/maps?q=San+Carlos+de+Bariloche&output=embed"
+              width="100%" height="300" loading="lazy"
+              title="Mapa de ubicación de Veterinaria Huellas"></iframe>
+    </div>
+  </section>
+ 
+  <!-- Formulario -->
+  <section class="contenedor dosColumnas">
+    <div>
+      <span class="tag">Escribinos</span>
+      <h2>Dejanos tu consulta</h2>
+      <p class="texto">
+        Completá el formulario y te responderemos a la brevedad.
+        Para urgencias, comunicate directamente por teléfono.
+      </p>
+    </div>
+ 
+    <div class="nota">
+      <form id="formContacto" novalidate>
+        <p>
+          <label for="nombre">Nombre</label><br>
+          <input type="text" id="nombre" placeholder="Tu nombre" size="30">
+        </p>
+        <p>
+          <label for="email">Correo electrónico</label><br>
+          <input type="email" id="email" placeholder="tucorreo@ejemplo.com" size="30">
+        </p>
+        <p>
+          <label for="motivo">Motivo de la consulta</label><br>
+          <select id="motivo">
+            <option value="">Seleccioná una opción</option>
+            <option>Consulta general</option>
+            <option>Vacunación</option>
+            <option>Peluquería</option>
+            <option>Urgencia</option>
+            <option>Otro</option>
+          </select>
+        </p>
+        <p>
+          <label for="consulta">Mensaje</label><br>
+          <textarea id="consulta" rows="4" cols="30" placeholder="Contanos en qué podemos ayudarte"></textarea>
+        </p>
+        <button type="submit" class="btn primario">Enviar consulta</button>
+        <p id="mensajeForm" class="mensaje" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+ 
+<footer class="footer contenedor">
+  <div>
+    <b>Clínica Veterinaria Huellas</b>
+    <p>Atención y prevención para perros y gatos.</p>
+  </div>
+  <p class="materia">Sitio desarrollado en Laboratorio Full Stack I</p>
+</footer>
+ 
 
 </body>
 </html>
