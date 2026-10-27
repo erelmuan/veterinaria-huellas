@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contacto y ubicación | Clínica Veterinaria Huellas</title>
+  <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-  
+
 <header class="topbar">
   <a class="logo" href="../index.html"><span>🐾</span> Huellas</a>
   <button id="menuBtn" class="menuBtn" aria-label="Abrir menú">☰</button>
@@ -18,9 +19,10 @@
     <a class="activo" href="contacto.html">Contacto</a>
   </nav>
 </header>
- 
+
 <main>
-  <!-- Título, introducción y medios de contacto -->
+
+  <!-- Título e introducción -->
   <section class="contenedor seccion">
     <div class="titulo">
       <span class="tag">Contacto y ubicación</span>
@@ -34,7 +36,10 @@
         para ayudarte!
       </p>
     </div>
- 
+  </section>
+
+  <!-- Medios de contacto -->
+  <section class="contenedor seccion">
     <div class="grid">
       <a class="card" href="tel:+542944456789">
         <span class="icono">📞</span>
@@ -62,24 +67,37 @@
       </a>
     </div>
   </section>
- 
+
   <!-- Días y horarios -->
   <section class="contenedor seccion">
     <div class="titulo">
-      <span class="icono">📌</span>
+      <span class="tag">Horarios 🕐</span>
       <h2>Días y horarios de atención</h2>
+      <p>Te esperamos durante toda la semana. Los domingos atendemos solo urgencias.</p>
     </div>
-    <div class="stats">
-      <article><strong>8:00 a 20:00</strong><span>Lunes a viernes</span></article>
-      <article><strong>9:00 a 14:00</strong><span>Sábados</span></article>
-      <article><strong>9:00 a 13:00</strong><span>Domingos (solo urgencias)</span></article>
+    <div class="grid">
+      <article class="card">
+        <span class="icono">🗓️</span>
+        <h3>Lunes a viernes</h3>
+        <p>De 8:00 a 20:00. Atención clínica, vacunación y peluquería.</p>
+      </article>
+      <article class="card">
+        <span class="icono">📅</span>
+        <h3>Sábados</h3>
+        <p>De 9:00 a 14:00. Consultas y controles de rutina.</p>
+      </article>
+      <article class="card">
+        <span class="icono">🚨</span>
+        <h3>Domingos</h3>
+        <p>De 9:00 a 13:00. Solo urgencias, avisanos por teléfono antes de llegar.</p>
+      </article>
     </div>
   </section>
- 
+
   <!-- Ubicación y cómo llegar -->
   <section class="contenedor dosColumnas" id="ubicacion">
     <div>
-      <span class="icono">📍</span>
+      <span class="tag">Cómo llegar 📍</span>
       <h2>Indicaciones útiles</h2>
       <p class="texto">Estamos sobre Av. Bustillo, de fácil acceso desde el centro.</p>
       <ul class="check">
@@ -97,7 +115,7 @@
               title="Mapa de ubicación de Veterinaria Huellas"></iframe>
     </div>
   </section>
- 
+
   <!-- Formulario -->
   <section class="contenedor dosColumnas">
     <div>
@@ -108,7 +126,7 @@
         Para urgencias, comunicate directamente por teléfono.
       </p>
     </div>
- 
+
     <div class="nota">
       <form id="formContacto" novalidate>
         <p>
@@ -139,8 +157,26 @@
       </form>
     </div>
   </section>
+
+  <!-- Llamado a la acción -->
+  <section class="contenedor seccion">
+    <div class="nota">
+      <h3>¿Preferís pedir un turno?</h3>
+      <p class="texto">
+        Si ya sabés qué atención necesita tu mascota, reservá tu lugar y evitá esperas.
+      </p>
+      <a class="btn primario" href="turnos.html">Solicitar turno</a>
+    </div>
+  </section>
+
+  <!-- Recordatorio final -->
+  <section class="contenedor">
+    <p class="texto">
+      💡 <em>Recordá: ante cualquier duda sobre la salud de tu mascota, escribinos o llamanos. ¡Siempre estamos para ayudarte!</em>
+    </p>
+  </section>
 </main>
- 
+
 <footer class="footer contenedor">
   <div>
     <b>Clínica Veterinaria Huellas</b>
@@ -148,7 +184,33 @@
   </div>
   <p class="materia">Sitio desarrollado en Laboratorio Full Stack I</p>
 </footer>
- 
 
+<script src="../js/script.js"></script>
+<script>
+  // Validación del formulario de contacto (propia de esta página)
+  const formContacto = document.getElementById("formContacto");
+  const mensajeForm = document.getElementById("mensajeForm");
+
+  formContacto.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const motivo = document.getElementById("motivo").value;
+    const consulta = document.getElementById("consulta").value.trim();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!nombre || !email || !motivo || !consulta) {
+      mensajeForm.textContent = "Por favor completá todos los campos.";
+      return;
+    }
+    if (!emailValido) {
+      mensajeForm.textContent = "Ingresá un correo electrónico válido.";
+      return;
+    }
+
+    mensajeForm.textContent = "¡Gracias " + nombre + "! Recibimos tu consulta y te responderemos a la brevedad.";
+    formContacto.reset();
+  });
+</script>
 </body>
 </html>
