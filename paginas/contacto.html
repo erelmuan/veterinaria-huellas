@@ -92,6 +92,10 @@
         <p>De 9:00 a 13:00. Solo urgencias, avisanos por teléfono antes de llegar.</p>
       </article>
     </div>
+    <div class="acciones">
+      <button class="btn secundario" id="abiertoBtn">¿Estamos abiertos ahora?</button>
+    </div>
+    <p id="estadoAtencion" class="mensaje" role="status"></p>
   </section>
 
   <!-- Ubicación y cómo llegar -->
@@ -191,6 +195,35 @@
     </div>
   </section>
 
+  <!-- Redes sociales -->
+  <section class="contenedor seccion">
+    <div class="titulo">
+      <span class="tag">Comunidad 💚</span>
+      <h2>Seguinos en redes</h2>
+      <p>Compartimos consejos de cuidado, novedades de la clínica y las mascotas que nos visitan.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://www.instagram.com/" target="_blank" rel="noopener">
+        <span class="icono">📸</span>
+        <h3>Instagram</h3>
+        <p>@veterinariahuellas</p>
+        <b>Seguinos →</b>
+      </a>
+      <a class="card" href="https://www.facebook.com/" target="_blank" rel="noopener">
+        <span class="icono">👍</span>
+        <h3>Facebook</h3>
+        <p>Veterinaria Huellas</p>
+        <b>Visitar página →</b>
+      </a>
+      <a class="card" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+        <span class="icono">🎬</span>
+        <h3>TikTok</h3>
+        <p>@veterinariahuellas</p>
+        <b>Ver videos →</b>
+      </a>
+    </div>
+  </section>
+
   <!-- Llamado a la acción -->
   <section class="contenedor seccion">
     <div class="nota">
@@ -207,6 +240,7 @@
     <p class="texto">
       💡 <em>Recordá: ante cualquier duda sobre la salud de tu mascota, escribinos o llamanos. ¡Siempre estamos para ayudarte!</em>
     </p>
+    <p><a class="btn secundario" href="#">Volver arriba ↑</a></p>
   </section>
 </main>
 
@@ -244,6 +278,32 @@
     mensajeForm.textContent = "¡Gracias " + nombre + "! Recibimos tu consulta y te responderemos a la brevedad.";
     formContacto.reset();
   });
+
+  // ¿Estamos abiertos ahora?
+  const abiertoBtn = document.getElementById("abiertoBtn");
+  const estadoAtencion = document.getElementById("estadoAtencion");
+
+  if (abiertoBtn && estadoAtencion) {
+    abiertoBtn.addEventListener("click", () => {
+      const ahora = new Date();
+      const dia = ahora.getDay();
+      const hora = ahora.getHours() + ahora.getMinutes() / 60;
+
+      if (dia === 0) {
+        estadoAtencion.textContent = (hora >= 9 && hora < 13)
+          ? "Ahora atendemos urgencias (hasta las 13:00)."
+          : "Hoy domingo solo atendemos urgencias de 9:00 a 13:00.";
+      } else if (dia === 6) {
+        estadoAtencion.textContent = (hora >= 9 && hora < 14)
+          ? "¡Estamos abiertos! Hoy atendemos hasta las 14:00."
+          : "Hoy sábado atendemos de 9:00 a 14:00.";
+      } else {
+        estadoAtencion.textContent = (hora >= 8 && hora < 20)
+          ? "¡Estamos abiertos! Hoy atendemos hasta las 20:00."
+          : "Hoy atendemos de 8:00 a 20:00.";
+      }
+    });
+  }
 </script>
 </body>
 </html>
